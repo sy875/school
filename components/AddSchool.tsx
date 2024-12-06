@@ -215,7 +215,7 @@ export function AddSchoolPage() {
                                                     <span className="text-green-500 capitalize">uploaded to database successfully</span>
                                                 </div>
                                             ) : (
-                                                <div className="h-[200px]">
+                                                <div className="h-[250px]">
                                                     <ImageUpload
                                                         onImageUpload={(url: string) => {
                                                             console.log("uploaded image url", url)
