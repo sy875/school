@@ -60,7 +60,7 @@ export default function Schools() {
                 />
             </div>
 
-            <ul className='flex flex-wrap gap-5 items-center justify-center'>
+            <ul className='flex flex-wrap gap-5 items-center justify-center py-5'>
                 {filteredSchools?.map((school) => (
                     <SchoolCard key={school.id} {...school} />
                 ))}

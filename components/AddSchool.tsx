@@ -86,7 +86,9 @@ export function AddSchoolPage() {
                 <form onSubmit={form.handleSubmit(onSubmit)} >
                     <div className="flex justify-between items-center my-5">
                         <h2 className="font-semibold text-xl  px-3">School Details</h2>
-                        <Button type="submit" className="w-fit mx-5 hidden lg:inline-block lg:mt-0">Add School</Button>
+                        <Button
+                            disabled={!image}
+                            type="submit" className="w-fit mx-5 hidden lg:inline-block lg:mt-0">Add School</Button>
                     </div>
                     <div className="border  p-2 rounded-md  m-2 grid grid-cols-1 lg:grid-cols-2 gap-4">
                         <div className="flex flex-col gap-2   rounded-md">
@@ -112,7 +114,13 @@ export function AddSchoolPage() {
                                     <FormItem>
                                         <FormLabel>Address</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="Enter school address" {...field} />
+
+                                            <Textarea
+                                                className="h-52"
+                                                placeholder="School address"
+
+                                                {...field}
+                                            />
                                         </FormControl>
 
                                         <FormMessage />
@@ -127,12 +135,7 @@ export function AddSchoolPage() {
                                     <FormItem>
                                         <FormLabel>City</FormLabel>
                                         <FormControl>
-                                            <Textarea
-                                                className="h-52"
-                                                placeholder="School address"
-
-                                                {...field}
-                                            />
+                                            <Input placeholder="Enter City" {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -228,7 +231,9 @@ export function AddSchoolPage() {
                             />
                         </div>
                     </div>
-                    <Button type="submit" className="w-full lg:hidden  lg:mt-0">Add School</Button>
+                    <Button
+                        disabled={!image}
+                        type="submit" className={`w-full lg:hidden  lg:mt-0 ${image.length == 0 && "pointer-events-none bg-opacity-50"}`}>Add School</Button>
                 </form>
             </Form>
         </div>

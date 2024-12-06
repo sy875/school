@@ -61,8 +61,8 @@ export function ImageUpload({ onImageUpload }: ImageUploadProps) {
 
     return (
         <div className="space-y-4 h-full">
-            <h2>School Image</h2>
-
+            <h2 >School Image</h2>
+            <span className="text-red-500 text-sm">upload school image</span>
 
             {/* Display image preview if available */}
             {imagePreview ? (
