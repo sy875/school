@@ -2,18 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+
 
 const Navbar = () => {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const router = useRouter();
     const pathname = usePathname();
-
-    const handleSchoolRedirect = () => {
-        router.push("/admin"); // Redirect to /admin page
-    };
-
     return (
         <nav className="shadow-md mb-10 overflow-hidden">
             <div className="lg:px-5 flex justify-between items-center">

@@ -1,11 +1,11 @@
 'use client'
 import { supabase } from '@/lib/supabase';
 import { useEffect, useState } from 'react';
-import SchoolCard from './SchoolCard';
+import SchoolCard, { School } from './SchoolCard';
 
 export default function Schools() {
-    const [schools, setSchools] = useState<any[]>([]);
-    const [filteredSchools, setFilteredSchools] = useState<any[]>([]);
+    const [schools, setSchools] = useState<School[]>([]);
+    const [filteredSchools, setFilteredSchools] = useState<School[]>([]);
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState('');
 
@@ -55,7 +55,7 @@ export default function Schools() {
             </div>
 
             <ul className='flex gap-2 items-center justify-center'>
-                {filteredSchools.map((school) => (
+                {filteredSchools?.map((school) => (
                     <SchoolCard key={school.id} {...school} />
                 ))}
             </ul>

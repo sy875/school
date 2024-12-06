@@ -53,9 +53,9 @@ export function ImageUpload({ onImageUpload }: ImageUploadProps) {
             onImageUpload(publicUrl);
             setLoading(false);
             setImagePreview(null); // Clear preview after upload
-        } catch (error: any) {
+        } catch (error) {
             setLoading(false);
-            setErrorMessage(error.message);
+            setErrorMessage(`${error}`);
         }
     };
 

@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -63,7 +62,7 @@ export function AddSchoolPage() {
     // Define the submit handler
     async function onSubmit(values: z.infer<typeof formSchema>) {
         try {
-            const { data, error } = await supabase.from('schools').insert([values]);
+            const { error } = await supabase.from('schools').insert([values]);
 
             if (error) {
                 toast.error(`Failed ${error.message}`)

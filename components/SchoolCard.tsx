@@ -1,8 +1,8 @@
-import Image from 'next/image';
+
 import React from 'react'
 
 
-interface School {
+export interface School {
     id: number;             // Unique identifier for the school
     name: string;           // Name of the school
     address: string;        // Address of the school
@@ -12,7 +12,7 @@ interface School {
     email_id: string;       // Email address for the school
     image: string;         // Optional image URL for the school
 }
-const SchoolCard: React.FC<School> = ({ id, name, address, city, state, contact, image, email_id }) => {
+const SchoolCard: React.FC<School> = ({ name, address, city, state, image }) => {
     return (
         <div className='w-[300px] cursor-pointer h-fit mx-auto md:mx-0 shadow-md rounded-md overflow-hidden'>
 
