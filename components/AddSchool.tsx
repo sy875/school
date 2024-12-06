@@ -212,12 +212,14 @@ export function AddSchoolPage() {
                                                     <span className="text-green-500 capitalize">uploaded to database successfully</span>
                                                 </div>
                                             ) : (
-                                                <ImageUpload
-                                                    onImageUpload={(url: string) => {
-                                                        console.log("uploaded image url", url)
-                                                        form.setValue("image", url)
-                                                    }}
-                                                />
+                                                <div className="h-[200px]">
+                                                    <ImageUpload
+                                                        onImageUpload={(url: string) => {
+                                                            console.log("uploaded image url", url)
+                                                            form.setValue("image", url)
+                                                        }}
+                                                    />
+                                                </div>
                                             )
                                         }
                                     </FormItem>
@@ -226,7 +228,7 @@ export function AddSchoolPage() {
                             />
                         </div>
                     </div>
-                    <Button type="submit" className="w-full lg:hidden mt-18 lg:mt-0">Add School</Button>
+                    <Button type="submit" className="w-full lg:hidden  lg:mt-0">Add School</Button>
                 </form>
             </Form>
         </div>

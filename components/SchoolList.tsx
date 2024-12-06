@@ -2,6 +2,7 @@
 import { supabase } from '@/lib/supabase';
 import { useEffect, useState } from 'react';
 import SchoolCard, { School } from './SchoolCard';
+import Spinner from './Spinner';
 
 export default function Schools() {
     const [schools, setSchools] = useState<School[]>([]);
@@ -37,24 +38,29 @@ export default function Schools() {
         setFilteredSchools(filtered);
     };
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return (
+        <div className='w-fit flex flex-col items-center m-auto h-screen'>
+            <p>Loading...</p>
+            <Spinner />
+        </div>
+    )
 
     return (
         <div>
             <h1 className='text-3xl text-center my-8 capitalize font-bold'>School Search</h1>
 
             {/* Search Bar */}
-            <div className="flex justify-center mb-6">
+            <div className="flex  justify-center mb-6">
                 <input
                     type="text"
                     placeholder="Search by school name"
                     value={searchQuery}
                     onChange={handleSearch}
-                    className="p-2 border border-gray-300 rounded-md w-1/2"
+                    className="p-2 border border-gray-300 rounded-md w-full mx-10 rounde-md lg:w-1/2"
                 />
             </div>
 
-            <ul className='flex gap-2 items-center justify-center'>
+            <ul className='flex flex-wrap gap-5 items-center justify-center'>
                 {filteredSchools?.map((school) => (
                     <SchoolCard key={school.id} {...school} />
                 ))}
